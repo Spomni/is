@@ -1,11 +1,11 @@
 {
   "name": "@spomni/is",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The library for quick check the conditions.",
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter progress",
-    "standart": "standart --fix --env mocha",
+    "standart": "standart --fix --env mocha browser",
     "prepublish": "npm run standart && npm test"
   },
   "author": "spomni",

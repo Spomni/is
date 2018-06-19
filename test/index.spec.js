@@ -6,6 +6,10 @@ var assert = require('chai').assert
  */
 var testValues = require('./lib/test-values.js')
 
+if (global !== undefined) {
+  global.NodeList = function() {}
+}
+
 describe('@namespace is', function() {
   describe('#array(rabbit)', function() {
     it('Should rerurn true if the option "rabbit" is array.', function() {
@@ -78,6 +82,37 @@ describe('@namespace is', function() {
     })
   })
 
+  describe('#nativeObject(rabbit)', function() {
+    it('Should rerurn true if the option "rabbit" is a native object.', function() {
+      assert.isTrue(is.nativeObject({}))
+    })
+
+    it('Should return false if the option "rabbit" is not a native object.', function() {
+      testValues.forEach(function(type) {
+        if (!(type instanceof Object)
+          || type === null
+          || type.constructor !== Object
+        ) {
+          assert.isFalse(is.nativeObject(type))
+        }
+      })
+    })
+  })
+
+  describe('#nodeList(rabbit)', function() {
+    it('Should rerurn true if the option "rabbit" is an instence of the class "NodeList".', function() {
+      assert.isTrue(is.nodeList(new NodeList()))
+    })
+
+    it('Should return false if the option "rabbit" is not an instence of the class "NodeList".', function() {
+      testValues.forEach(function(type) {
+        if (!(type instanceof NodeList)) {
+          assert.isFalse(is.nodeList(type))
+        }
+      })
+    })
+  })
+
   describe('#null(rabbit)', function() {
     it('Should rerurn true if the option "rabbit" is null.', function() {
       assert.isTrue(is.null(null))
@@ -113,7 +148,9 @@ describe('@namespace is', function() {
 
     it('Should return false if the option "rabbit" is not an object.', function() {
       testValues.forEach(function(type) {
-        if (!(type instanceof Object)) {
+        if (!(type instanceof Object)
+          || type === null
+        ) {
           assert.isFalse(is.object(type))
         }
       })

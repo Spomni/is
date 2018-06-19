@@ -6,11 +6,11 @@
    *   false
    *   function
    *   NaN
+   *   nativeObject
+   *   nodeList
    *   null
    *   number
    *   object
-   objectObject
-   objectNodeList
    *   string
    *   true
    *   undefined
@@ -42,6 +42,19 @@ module.exports = {
     NaN: function(rabbit) {
       var standartDoNotCry = rabbit
       return rabbit !== standartDoNotCry
+    },
+
+    nativeObject: function(rabbit) {
+      if (!(rabbit instanceof Object)) return false
+      if (rabbit === null) return false
+      if (rabbit.constructor !== Object) return false
+      return true
+    },
+
+    nodeList: function(rabbit) {
+      if (!(NodeList instanceof Function)) return false
+      if (rabbit instanceof NodeList) return true
+      return false
     },
 
     null: function(rabbit) {
