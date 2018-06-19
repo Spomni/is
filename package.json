@@ -1,15 +1,18 @@
 {
   "name": "@spomni/is",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "The library for quick check the conditions.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter progress"
+    "test": "mocha --reporter progress",
+    "standart": "standart --fix --env mocha",
+    "prepublish": "npm run standart && npm test"
   },
   "author": "spomni",
   "license": "UNLICENSED",
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "standart": "^6.1.0"
   }
 }

@@ -1,14 +1,13 @@
-(function(){
-
-var NodeList = function(){
+(function() {
+var NodeList = function() {
   this.length = 0
 }
 
-var testValues = module.exports = [
+module.exports = [
   [],
   true,
   false,
-  function(){},
+  function() {},
   NaN,
   null,
   34,
@@ -17,5 +16,4 @@ var testValues = module.exports = [
   'str',
   undefined
 ]
-
 })()
