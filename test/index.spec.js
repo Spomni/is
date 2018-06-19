@@ -1,10 +1,10 @@
 var is = require('../index.js')
 var assert = require('chai').assert
 
-/** Call the callback function that passed as once option for each data type.
- * @function
+/** The values that will be passed to the methods of the namespace "is".
+ * @type array
  */
-var forEachType = require('./lib/for-each-type.js')
+var testValues = require('./lib/test-values.js')
 
 describe('@namespace is', function(){
 
@@ -15,9 +15,39 @@ describe('@namespace is', function(){
     })
     
     it('Should return false if the option "rabbit" is not array.', function(){
-      forEachType(function(type){
+      testValues.forEach(function(type){
         if (!(type instanceof Array)){
           assert.isFalse(is.array(type))
+        }
+      })
+    })
+  })
+  
+  describe('#boolean(rabbit)', function(){
+  
+    it('Should rerurn true if the option "rabbit" is boolean.', function(){
+      assert.isTrue(is.boolean(true))
+    })
+    
+    it('Should return false if the option "rabbit" is not boolean.', function(){
+      testValues.forEach(function(type){
+        if (!(typeof(type) === 'boolean')){
+          assert.isFalse(is.boolean(type))
+        }
+      })
+    })
+  })
+  
+  describe('#false(rabbit)', function(){
+  
+    it('Should rerurn true if the option "rabbit" is false.', function(){
+      assert.isTrue(is.false(false))
+    })
+    
+    it('Should return false if the option "rabbit" is not false.', function(){
+      testValues.forEach(function(type){
+        if (type !== false){
+          assert.isFalse(is.false(type))
         }
       })
     })
@@ -30,7 +60,7 @@ describe('@namespace is', function(){
     })
     
     it('Should return false if the option "rabbit" is not function.', function(){
-      forEachType(function(type){
+      testValues.forEach(function(type){
         if (!(type instanceof Function)){
           assert.isFalse(is.function(type))
         }
@@ -45,7 +75,7 @@ describe('@namespace is', function(){
     })
     
     it('Should return false if the option "rabbit" is not NaN.', function(){
-      forEachType(function(type){
+      testValues.forEach(function(type){
         if (!(type !== type)){
           assert.isFalse(is.NaN(type))
         }
@@ -60,7 +90,7 @@ describe('@namespace is', function(){
     })
     
     it('Should return false if the option "rabbit" is not null.', function(){
-      forEachType(function(type){
+      testValues.forEach(function(type){
         if (!(type === null)){
           assert.isFalse(is.null(type))
         }
@@ -75,7 +105,7 @@ describe('@namespace is', function(){
     })
     
     it('Should return false if the option "rabbit" is not number.', function(){
-      forEachType(function(type){
+      testValues.forEach(function(type){
         if (!(typeof(type) === 'number')){
           assert.isFalse(is.number(type))
         }
@@ -90,7 +120,7 @@ describe('@namespace is', function(){
     })
     
     it('Should return false if the option "rabbit" is not an object.', function(){
-      forEachType(function(type){
+      testValues.forEach(function(type){
         if (!(type instanceof Object)){
           assert.isFalse(is.object(type))
         }
@@ -105,9 +135,24 @@ describe('@namespace is', function(){
     })
     
     it('Should return false if the option "rabbit" is not string.', function(){
-      forEachType(function(type){
+      testValues.forEach(function(type){
         if (!(typeof(type) === 'string')){
           assert.isFalse(is.string(type))
+        }
+      })
+    })
+  })
+  
+  describe('#true(rabbit)', function(){
+  
+    it('Should rerurn true if the option "rabbit" is true.', function(){
+      assert.isTrue(is.true(true))
+    })
+    
+    it('Should return false if the option "rabbit" is not true.', function(){
+      testValues.forEach(function(type){
+        if (type !== true ){
+          assert.isFalse(is.true(type))
         }
       })
     })
@@ -120,17 +165,12 @@ describe('@namespace is', function(){
     })
     
     it('Should return false if the option "rabbit" is not undefined.', function(){
-      forEachType(function(type){
+      testValues.forEach(function(type){
         if (!(type === undefined)){
           assert.isFalse(is.undefined(type))
         }
       })
     })
   })
-
-/*
-*   undefined
-*/
-
 
 })

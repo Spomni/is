@@ -4,7 +4,7 @@
   "description": "The library for quick check the conditions.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --reporter progress"
   },
   "author": "spomni",
   "license": "UNLICENSED",

@@ -3,12 +3,17 @@
   /** The library for quick and pretty check the conditions.
    * Contains next methods:
    *   array
+   *   boolean
+   *   false
    *   function
    *   NaN
    *   null
    *   number
    *   object
+   objectObject
+   objectNodeList
    *   string
+   *   true
    *   undefined
    *
    * @namespace is
@@ -18,6 +23,16 @@
     array: function(rabbit){
       if (rabbit instanceof Array) return true
       return false
+    },
+    
+    boolean: function(rabbit){
+      if (typeof(rabbit) !== 'boolean') return false
+      return true
+    },
+    
+    false: function(rabbit, debug){
+      if (rabbit !== false) return false
+      return true
     },
     
     function: function(rabbit){
@@ -48,6 +63,11 @@
     string: function(rabbit){
       if (typeof(rabbit) !== "string") return false;
       return true;
+    },
+    
+    true: function(rabbit){
+      if (rabbit !== true) return false
+      return true
     },
       
     undefined: function(rabbit){
