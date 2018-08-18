@@ -1,10 +1,10 @@
 {
   "name": "@spomni/is",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "The library for quick check the conditions.",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/Spomni/is.git"
+    "type": "git",
+    "url": "https://github.com/Spomni/is.git"
   },
   "main": "index.js",
   "scripts": {
