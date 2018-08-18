@@ -12,7 +12,7 @@ if (global !== undefined) {
 
 describe('@namespace is', function() {
   describe('#array(rabbit)', function() {
-    it('Should rerurn true if the option "rabbit" is array.', function() {
+    it('Should return true if the option "rabbit" is array.', function() {
       assert.isTrue(is.array([]))
     })
 
@@ -26,7 +26,7 @@ describe('@namespace is', function() {
   })
 
   describe('#boolean(rabbit)', function() {
-    it('Should rerurn true if the option "rabbit" is boolean.', function() {
+    it('Should return true if the option "rabbit" is boolean.', function() {
       assert.isTrue(is.boolean(true))
     })
 
@@ -40,7 +40,7 @@ describe('@namespace is', function() {
   })
 
   describe('#false(rabbit)', function() {
-    it('Should rerurn true if the option "rabbit" is false.', function() {
+    it('Should return true if the option "rabbit" is false.', function() {
       assert.isTrue(is.false(false))
     })
 
@@ -54,7 +54,7 @@ describe('@namespace is', function() {
   })
 
   describe('#function(rabbit)', function() {
-    it('Should rerurn true if the option "rabbit" is function.', function() {
+    it('Should return true if the option "rabbit" is function.', function() {
       assert.isTrue(is.function(function() {}))
     })
 
@@ -68,7 +68,7 @@ describe('@namespace is', function() {
   })
 
   describe('#NaN(rabbit)', function() {
-    it('Should rerurn true if the option "rabbit" is NaN.', function() {
+    it('Should return true if the option "rabbit" is NaN.', function() {
       assert.isTrue(is.NaN(NaN))
     })
 
@@ -83,7 +83,7 @@ describe('@namespace is', function() {
   })
 
   describe('#nativeObject(rabbit)', function() {
-    it('Should rerurn true if the option "rabbit" is a native object.', function() {
+    it('Should return true if the option "rabbit" is a native object.', function() {
       assert.isTrue(is.nativeObject({}))
     })
 
@@ -100,7 +100,7 @@ describe('@namespace is', function() {
   })
 
   describe('#nodeList(rabbit)', function() {
-    it('Should rerurn true if the option "rabbit" is an instence of the class "NodeList".', function() {
+    it('Should return true if the option "rabbit" is an instence of the class "NodeList".', function() {
       assert.isTrue(is.nodeList(new NodeList()))
     })
 
@@ -114,7 +114,7 @@ describe('@namespace is', function() {
   })
 
   describe('#null(rabbit)', function() {
-    it('Should rerurn true if the option "rabbit" is null.', function() {
+    it('Should return true if the option "rabbit" is null.', function() {
       assert.isTrue(is.null(null))
     })
 
@@ -128,7 +128,7 @@ describe('@namespace is', function() {
   })
 
   describe('#number(rabbit)', function() {
-    it('Should rerurn true if the option "rabbit" is number.', function() {
+    it('Should return true if the option "rabbit" is number.', function() {
       assert.isTrue(is.number(45))
     })
 
@@ -142,7 +142,7 @@ describe('@namespace is', function() {
   })
 
   describe('#object(rabbit)', function() {
-    it('Should rerurn true if the option "rabbit" is an object.', function() {
+    it('Should return true if the option "rabbit" is an object.', function() {
       assert.isTrue(is.object({}))
     })
 
@@ -158,7 +158,7 @@ describe('@namespace is', function() {
   })
 
   describe('#string(rabbit)', function() {
-    it('Should rerurn true if the option "rabbit" is string.', function() {
+    it('Should return true if the option "rabbit" is string.', function() {
       assert.isTrue(is.string('str'))
     })
 
@@ -172,7 +172,7 @@ describe('@namespace is', function() {
   })
 
   describe('#true(rabbit)', function() {
-    it('Should rerurn true if the option "rabbit" is true.', function() {
+    it('Should return true if the option "rabbit" is true.', function() {
       assert.isTrue(is.true(true))
     })
 
@@ -186,7 +186,7 @@ describe('@namespace is', function() {
   })
 
   describe('#undefined(rabbit)', function() {
-    it('Should rerurn true if the option "rabbit" is undefined.', function() {
+    it('Should return true if the option "rabbit" is undefined.', function() {
       assert.isTrue(is.undefined(undefined))
     })
 
