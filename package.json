@@ -2,6 +2,10 @@
   "name": "@spomni/is",
   "version": "0.2.0",
   "description": "The library for quick check the conditions.",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/Spomni/is.git"
+  },
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter progress",
