@@ -1,3 +1,8 @@
+if (global !== undefined) {
+  global.NodeList = function(){}
+  global.HTMLElement = function(){}
+}
+
 var is = require('../index.js')
 var assert = require('chai').assert
 
@@ -5,10 +10,6 @@ var assert = require('chai').assert
  * @type array
  */
 var testValues = require('./lib/test-values.js')
-
-if (global !== undefined) {
-  global.NodeList = function() {}
-}
 
 describe('@namespace is', function() {
   describe('#array(rabbit)', function() {
@@ -62,6 +63,21 @@ describe('@namespace is', function() {
       testValues.forEach(function(type) {
         if (!(type instanceof Function)) {
           assert.isFalse(is.function(type))
+        }
+      })
+    })
+  })
+  
+  describe('#HTMLElement(rabbit)', function() {
+    it('Should return true if the option "rabbit" is a HTMLElement.', function() {
+
+      assert.isTrue(is.HTMLElement(new HTMLElement()))
+    })
+  
+    it('Should return false if the option "rabbit" is not HTMLElement.', function() {
+      testValues.forEach(function(type) {
+        if (!(type instanceof HTMLElement)) {
+          assert.isFalse(is.HTMLElement(type))
         }
       })
     })
