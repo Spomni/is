@@ -5,6 +5,7 @@
    *   boolean
    *   false
    *   function
+   *   HTMLElement
    *   NaN
    *   nativeObject
    *   nodeList
@@ -37,6 +38,12 @@ module.exports = {
     function: function(rabbit) {
       if (rabbit instanceof Function) return true
       return false
+    },
+    
+    HTMLElement: function(rabbit){
+      if (!this.function(rabbit)) return false;
+      if (!(rabbit instanceof HTMLElement)) return false;
+      return true;
     },
 
     NaN: function(rabbit) {
