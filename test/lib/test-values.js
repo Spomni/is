@@ -8,6 +8,7 @@ module.exports = [
   true,
   false,
   function() {},
+  new HTMLElement,
   NaN,
   null,
   34,

@@ -41,7 +41,7 @@ module.exports = {
     },
     
     HTMLElement: function(rabbit){
-      if (!this.function(rabbit)) return false;
+      if (!this.function(HTMLElement)) return false;
       if (!(rabbit instanceof HTMLElement)) return false;
       return true;
     },
@@ -95,4 +95,5 @@ module.exports = {
       return true
     }
   }
+  
 })()
